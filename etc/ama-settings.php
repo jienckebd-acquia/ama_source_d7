@@ -866,5 +866,5 @@ $databases['migrate']['default'] = [
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 ];
-$settings['migrate_source_base_path'] = '/var/www/host/d7/docroot';
-$settings['migrate_source_private_file_path'] = '/var/www/host/d7/files-private';
+$settings['migrate_source_base_path'] = '/var/www/host/ama_source_d7/docroot';
+$settings['migrate_source_private_file_path'] = '/var/www/host/ama_source_d7/files-private';
