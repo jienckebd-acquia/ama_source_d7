@@ -1,0 +1,21 @@
+name: ama_source_d7
+recipe: acquia
+config:
+  php: '7.4'
+  xdebug: true
+proxy:
+  appserver:
+    - ama_source_d7.lndo.site
+    - "*.ama_source_d7.lndo.site"
+services:
+  appserver:
+    xdebug: true
+    overrides:
+      volumes:
+        - ./../:/var/www/host
+      environment:
+        DRUSH_OPTIONS_URI: "https://ama_source_d7.lndo.site"
+        XDEBUG_MODE: "debug,profile"
+        XDEBUG_CONFIG: "client_host=host.docker.internal discover_client_host=1 log=/tmp/xdebug.log remote_enable=true remote_host=host.docker.internal"
+  database:
+    portforward: 33077
